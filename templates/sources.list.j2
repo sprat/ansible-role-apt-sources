@@ -1,0 +1,7 @@
+{% for repo_name in apt_sources_list_data.selected_repositories %}
+{% set repo = apt_sources_list_data.available_repositories[repo_name] %}
+deb {{ repo.uri }} {{ repo.suite }} {{ apt_sources_list_data.components|join(' ') }}
+{% if apt_sources_enable_src|bool %}
+deb-src {{ repo.uri }} {{ repo.suite }} {{ apt_sources_list_data.components|join(' ') }}
+{% endif %}
+{% endfor %}

@@ -1,2 +1,12 @@
 ---
 # tasks main
+- name: Include distribution-specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
+
+- name: Create sources list
+  become: yes
+  template:
+    src: sources.list.j2
+    dest: /etc/apt/sources.list
+  register: create_sources_list
+

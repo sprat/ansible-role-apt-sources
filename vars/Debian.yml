@@ -1,0 +1,22 @@
+---
+apt_sources_list_data:
+  available_repositories:
+    release:
+      uri: "{{ apt_sources_debian_release_repo_url }}"
+      suite: "{{ ansible_distribution_release }}"
+    updates:
+      uri: "{{ apt_sources_debian_release_repo_url }}"
+      suite: "{{ ansible_distribution_release }}-updates"
+    backports:
+      uri: "{{ apt_sources_debian_release_repo_url }}"
+      suite: "{{ ansible_distribution_release }}-backports"
+    proposed:
+      uri: "{{ apt_sources_debian_release_repo_url }}"
+      suite: "{{ ansible_distribution_release }}-proposed-updates"
+    security:
+      uri: "{{ apt_sources_debian_security_repo_url }}"
+      suite: "{{ ansible_distribution_release }}/updates"
+  selected_repositories: "{{ ['release', 'updates'] + apt_sources_debian_additional_repositories + ['security'] }}"
+  components: "{{ apt_sources_debian_components }}"
+
+# TODO: add debug repo?
