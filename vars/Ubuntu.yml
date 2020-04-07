@@ -14,7 +14,7 @@ apt_sources_list_data:
       uri: "{{ apt_sources_ubuntu_release_repo_url }}"
       suite: "{{ ansible_distribution_release }}-proposed"
     security:
-      uri: "{{ apt_sources_ubuntu_release_repo_url }}"
+      uri: "{{ apt_sources_ubuntu_security_repo_url }}"
       suite: "{{ ansible_distribution_release }}-security"
   selected_repositories: "{{ ['release', 'updates'] + apt_sources_ubuntu_additional_repositories + ['security'] }}"
   components: "{{ apt_sources_ubuntu_components }}"

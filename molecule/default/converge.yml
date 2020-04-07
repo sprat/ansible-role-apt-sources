@@ -1,5 +1,11 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    apt_sources_debian_release_repo_url: "http://ftp.fr.debian.org/debian"
+    apt_sources_ubuntu_release_repo_url: "https://fr.archive.ubuntu.com/ubuntu"
+    apt_sources_debian_additional_repositories: ["backports", "proposed"]
+    apt_sources_ubuntu_additional_repositories: ["backports", "proposed"]
+    apt_sources_enable_src: yes
   roles:
     - role: ansible-role-apt-sources
