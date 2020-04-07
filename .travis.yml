@@ -1,0 +1,17 @@
+---
+language: python
+python:
+  - "3.6"
+services:
+  - docker
+env:
+  - DISTRIB=ubuntu1804
+  - DISTRIB=ubuntu1604
+  - DISTRIB=debian10
+  - DISTRIB=debian9
+  - DISTRIB=debian8
+script:
+  - molecule --version
+  - molecule test
+# notifications:
+#   webhooks: https://galaxy.ansible.com/api/v1/notifications/

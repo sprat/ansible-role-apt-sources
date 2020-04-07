@@ -1,0 +1,39 @@
+---
+# Common defaults
+apt_sources_cache_valid_time: 3600
+apt_sources_always_update_cache: no
+apt_sources_enable_src: no  # add deb-src lines
+apt_sources_file: "/etc/apt/sources.list"
+
+
+# Debian-specific defaults
+apt_sources_debian_main_repo_url: "http://deb.debian.org/debian"
+apt_sources_debian_main_repo_suites:
+  - "{{ ansible_distribution }}"
+  - "{{ ansible_distribution }}-updates"
+  # - "{{ ansible_distribution }}-backports"
+  # - "{{ ansible_distribution }}-proposed-updates"
+apt_sources_debian_security_repo_url: "http://security.debian.org/debian-security"
+apt_sources_debian_security_repo_suites:
+  - "{{ ansible_distribution }}/updates"
+apt_sources_debian_components:
+  - main
+  - contrib
+  - non-free
+
+
+# Ubuntu-specific defaults
+apt_sources_ubuntu_main_repo_url: "http://archive.ubuntu.com/ubuntu"
+apt_sources_ubuntu_main_suites:
+  - "{{ ansible_distribution }}"
+  - "{{ ansible_distribution }}-updates"
+  # - "{{ ansible_distribution }}-backports"
+  # - "{{ ansible_distribution }}-proposed"
+apt_sources_ubuntu_security_repo_url: "http://security.ubuntu.com/ubuntu"
+apt_sources_ubuntu_security_suites:
+  - "{{ ansible_distribution }}-security"
+apt_sources_ubuntu_components:
+  - main
+  - restricted
+  - universe
+  - multiverse
