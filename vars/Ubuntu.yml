@@ -18,3 +18,5 @@ apt_sources_list_data:
       suite: "{{ ansible_distribution_release }}-security"
   selected_repositories: "{{ ['release', 'updates'] + apt_sources_ubuntu_additional_repositories + ['security'] }}"
   components: "{{ apt_sources_ubuntu_components }}"
+
+# TODO: add partner repo?
