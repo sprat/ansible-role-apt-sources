@@ -2,10 +2,22 @@
 - name: Include distribution-specific variables
   include_vars: "{{ ansible_distribution }}.yml"
 
-- name: Create sources list
+- name: Determine apt version
+  command: dpkg-query --showformat='${Version}' --show apt
+  changed_when: False
+  register: apt_version
+
+- name: Install apt-transport-https
+  become: yes
+  apt:
+    name: apt-transport-https
+    update_cache: yes
+  when: apt_version.stdout is version('1.5', '<')
+
+- name: Update sources.list file
   become: yes
   template:
     src: sources.list.j2
     dest: /etc/apt/sources.list
-  register: create_sources_list
+  register: update_sources_list
 
