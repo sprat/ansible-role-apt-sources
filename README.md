@@ -1,4 +1,4 @@
-Ansible Role: apt-sources
+Ansible Role: apt_sources
 =========================
 
 [![Build Status](https://api.travis-ci.com/sprat/ansible-role-apt-sources.svg?branch=master)](https://travis-ci.com/sprat/ansible-role-apt-sources)
@@ -26,7 +26,7 @@ Example Playbook
 ```yaml
 - hosts: server
   roles:
-    - role: sprat.apt-sources
+    - role: sprat.apt_sources
 ```
 
 License

@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Sylvain Prat
-  role_name: apt-sources
+  role_name: apt_sources
   description: Configure the APT sources list on Ubuntu or Debian
   license: MIT
   company: none
