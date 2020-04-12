@@ -35,7 +35,7 @@
   become: yes
   apt:
     update_cache: yes
-    cache_valid_time: "{{ omit if update_sources_list.changed else apt_sources_cache_valid_time }}"
+  when: update_sources_list.changed
   tags:
     - apt_sources
     - apt_sources_update_cache
