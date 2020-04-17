@@ -6,7 +6,7 @@
 
 - name: Determine apt version
   command: dpkg-query --showformat='${Version}' --show apt
-  changed_when: False
+  changed_when: no
   register: apt_version
   tags:
     - apt_sources
