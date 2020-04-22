@@ -10,7 +10,7 @@ env:
   - DISTRIB=debian10
   - DISTRIB=debian9
 install:
-  - pip install -r requirements.in
+  - pip install -I -r requirements.in
 script:
   - molecule --version
   - molecule test
