@@ -9,6 +9,8 @@ env:
   - DISTRIB=ubuntu1604
   - DISTRIB=debian10
   - DISTRIB=debian9
+install:
+  - pip install -r requirements.in
 script:
   - molecule --version
   - molecule test
