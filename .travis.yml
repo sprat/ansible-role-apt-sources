@@ -10,7 +10,6 @@ env:
   - IMAGE: geerlingguy/docker-ubuntu1604-ansible
   - IMAGE: geerlingguy/docker-debian10-ansible
   - IMAGE: geerlingguy/docker-debian9-ansible
-  - IMAGE: geerlingguy/docker-debian8-ansible
 install:
   - pip install -I -r requirements.in
 script:
