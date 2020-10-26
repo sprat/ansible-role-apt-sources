@@ -5,10 +5,12 @@ python:
 services:
   - docker
 env:
-  - DISTRIB=ubuntu1804
-  - DISTRIB=ubuntu1604
-  - DISTRIB=debian10
-  - DISTRIB=debian9
+  - IMAGE: geerlingguy/docker-ubuntu2004-ansible
+  - IMAGE: geerlingguy/docker-ubuntu1804-ansible
+  - IMAGE: geerlingguy/docker-ubuntu1604-ansible
+  - IMAGE: geerlingguy/docker-debian10-ansible
+  - IMAGE: geerlingguy/docker-debian9-ansible
+  - IMAGE: geerlingguy/docker-debian8-ansible
 install:
   - pip install -I -r requirements.in
 script:
