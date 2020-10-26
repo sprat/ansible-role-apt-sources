@@ -26,6 +26,7 @@
   template:
     src: sources.list.j2
     dest: /etc/apt/sources.list
+    mode: 0644
   register: update_sources_list
   tags:
     - apt_sources
