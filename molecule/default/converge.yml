@@ -6,6 +6,6 @@
     apt_sources_ubuntu_release_repo_url: "https://fr.archive.ubuntu.com/ubuntu"
     apt_sources_debian_additional_repositories: ["backports", "proposed"]
     apt_sources_ubuntu_additional_repositories: ["backports", "proposed"]
-    apt_sources_enable_src: yes
+    apt_sources_enable_src: true
   roles:
     - role: ansible-role-apt-sources

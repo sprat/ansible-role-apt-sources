@@ -6,23 +6,23 @@
 
 - name: Determine apt version
   command: dpkg-query --showformat='${Version}' --show apt
-  changed_when: no
+  changed_when: false
   register: apt_version
   tags:
     - apt_sources
 
 - name: Install apt-transport-https
-  become: yes
+  become: true
   apt:
     name: apt-transport-https
-    update_cache: yes
+    update_cache: true
   when: apt_version.stdout is version('1.5', '<')
   tags:
     - apt_sources
     - apt_sources_install
 
 - name: Update sources.list file
-  become: yes
+  become: true
   template:
     src: sources.list.j2
     dest: /etc/apt/sources.list
@@ -33,9 +33,9 @@
     - apt_sources_configure
 
 - name: Update apt cache
-  become: yes
+  become: true
   apt:
-    update_cache: yes
+    update_cache: true
   when: update_sources_list.changed
   tags:
     - apt_sources

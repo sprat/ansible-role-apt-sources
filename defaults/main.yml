@@ -1,7 +1,7 @@
 ---
 # Common defaults
 apt_sources_cache_valid_time: 3600  # use 0 to always update the cache
-apt_sources_enable_src: no  # add deb-src lines
+apt_sources_enable_src: false  # add deb-src lines
 
 
 # Debian-specific defaults
