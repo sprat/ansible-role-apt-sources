@@ -43,5 +43,5 @@ This role was created in 2020 by [Sylvain Prat](https://github.com/sprat).
 
 [build_badge]:  https://img.shields.io/github/workflow/status/sprat/ansible-role-apt-sources/CI
 [build_link]:   https://github.com/sprat/ansible-role-apt-sources/actions?query=workflow:CI
-[galaxy_badge]:  https://img.shields.io/ansible/role/47754
-[galaxy_link]:   https://galaxy.ansible.com/sprat/apt_sources
+[galaxy_badge]: https://img.shields.io/ansible/role/47754
+[galaxy_link]:  https://galaxy.ansible.com/sprat/apt_sources
