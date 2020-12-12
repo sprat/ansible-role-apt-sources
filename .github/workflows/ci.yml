@@ -6,6 +6,14 @@ jobs:
   # test the role
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - geerlingguy/docker-ubuntu2004-ansible
+          - geerlingguy/docker-ubuntu1804-ansible
+          - geerlingguy/docker-ubuntu1604-ansible
+          - geerlingguy/docker-debian10-ansible
+          - geerlingguy/docker-debian9-ansible
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,6 +29,8 @@ jobs:
           pip install -r requirements.in
 
       - name: Run molecule tests
+        env:
+          IMAGE: ${{ matrix.image }}
         run: molecule -v test
 
   # publish the role on ansible galaxy
