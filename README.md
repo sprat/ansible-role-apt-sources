@@ -1,8 +1,8 @@
 Ansible Role: apt_sources
 =========================
 
-[![Ansible Galaxy][galaxy_image]][galaxy_link]
-[![Build Status][travis_image]][travis_link]
+[![Build Status][build_badge]][build_link]
+[![Ansible Galaxy][galaxy_badge]][galaxy_link]
 
 Configure the APT sources list on Ubuntu or Debian
 
@@ -41,7 +41,7 @@ Author Information
 This role was created in 2020 by [Sylvain Prat](https://github.com/sprat).
 
 
-[travis_image]:  https://travis-ci.com/sprat/ansible-role-apt-sources.svg?branch=master
-[travis_link]:   https://travis-ci.com/sprat/ansible-role-apt-sources
-[galaxy_image]:  https://img.shields.io/badge/galaxy-sprat.apt__sources-660198.svg?style=flat
+[build_badge]:  https://img.shields.io/github/workflow/status/sprat/ansible-role-apt-sources/CI
+[build_link]:   https://github.com/sprat/ansible-role-apt-sources/actions?query=workflow:CI
+[galaxy_badge]:  https://img.shields.io/ansible/role/47754
 [galaxy_link]:   https://galaxy.ansible.com/sprat/apt_sources
