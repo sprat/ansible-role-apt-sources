@@ -1,0 +1,16 @@
+---
+name: CI
+'on': push
+
+jobs:
+  # test the role
+  test:
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
+      - name: molecule
+        uses: robertdebock/molecule-action@2.6.8
+        with:
+          image: docker-ubuntu2004-ansible
