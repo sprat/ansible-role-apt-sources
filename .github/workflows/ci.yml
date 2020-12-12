@@ -1,6 +1,9 @@
 ---
 name: CI
-'on': push
+"on":
+  push:
+  schedule:
+    - cron: "0 3 * * 1"
 
 jobs:
   # test the role
@@ -35,8 +38,7 @@ jobs:
 
   # publish the role on ansible galaxy
   publish:
-    needs:
-      - test
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Publish
