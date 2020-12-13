@@ -28,6 +28,9 @@ Example Playbook
 - hosts: server
   roles:
     - role: sprat.apt_sources
+  vars:
+    apt_sources_enable_src: true
+    apt_sources_ubuntu_release_repo_url: "https://fr.archive.ubuntu.com/ubuntu"
 ```
 
 License
